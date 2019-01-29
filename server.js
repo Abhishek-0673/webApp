@@ -2,6 +2,7 @@ const express  = require('express');
 const fs = require('fs');
 const os = require('os');
 const hbs = require('hbs');
+const PORT = process.env.PORT || 3000;
 
 const data = os.userInfo();
 const name = data.username;
@@ -62,4 +63,4 @@ app.get('/bad',(req,res)=>{
        errMessage:'Bad Request'
    });
 });
-app.listen(3000,()=>console.log("Server is up at port 3000"));
+app.listen(PORT,()=>console.log(`Server is up at port ${PORT}`));
